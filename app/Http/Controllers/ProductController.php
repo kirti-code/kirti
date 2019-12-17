@@ -26,6 +26,7 @@ class ProductController extends Controller
     {
 
         $productData = $this->product_repository->getProductData($request);
+        dd($productData);
         $statusArr = Helper::statusArr();
         if ($request->ajax()) {
             return response()->json(['data' => view('Dashboard.Product.ProTable', compact('productData'))->render()]);
@@ -78,5 +79,6 @@ class ProductController extends Controller
         return response()->json(['message' => $data['message'], 'redirectTo' => route('product.index')], $data['http_status']);
     }
     public function show($id)
-    { }
+    {
+    }
 }

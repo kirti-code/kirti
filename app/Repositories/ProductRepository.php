@@ -10,6 +10,9 @@ class ProductRepository
 {
   public function getProductData(Request $request)
   {
+    echo 'testiing';
+
+
     return Product::with('categories')->when($request->filled('status'), function ($query) use ($request) {
       $query->where('status', 'like', '%' . $request->input('status') . '%');
     })->orderby('product_id', 'desc')

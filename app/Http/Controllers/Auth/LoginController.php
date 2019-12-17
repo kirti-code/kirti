@@ -47,7 +47,7 @@ class LoginController extends Controller
         $this->redirectTo = 'dashboard';
         //dd($this->redirectTo);
         if (Auth::check()) {
-            dd(Auth::user()->role);
+            //dd(Auth::user()->role);
 
             return  $this->redirectTo;
         }
