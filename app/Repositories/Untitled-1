@@ -1,0 +1,13 @@
+public function relation(){
+    //    $user=User::first();
+    //    $roles=Role::all();
+    //     $user->roles()->attach($roles);
+    //    $role->users()->sync([5]);
+        // $user->roles()->sinc([2]);
+        
+        $user = Auth::user();
+        
+        if (Auth::check()) {
+        dd('yes logged in');
+        }
+}
